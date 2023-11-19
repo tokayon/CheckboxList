@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 final class CheckboxViewModel: ObservableObject {
     var title: String

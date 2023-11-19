@@ -9,10 +9,12 @@ import SwiftUI
 
 struct SelectableView: View {
     private struct Constants {
-        static let selectedImageName = "checkmark.square"
+        static let selectedImageName = "checkmark.square.fill"
         static let imageName = "square"
         static let selectedFont = Font.system(size: 18, weight: .medium)
-        static let font = Font.system(size: 16, weight: .regular)
+        static let font = Font.system(size: 18, weight: .regular)
+        static let checkboxColor = Color(red: 0.25, green: 0.25, blue: 0.25)
+        static let checkboxSize = CGSizeMake(25, 25)
     }
      
     @ObservedObject var viewModel: CheckboxViewModel
@@ -20,10 +22,11 @@ struct SelectableView: View {
     var body: some View {
         HStack(spacing: 10) {
             Image(systemName: viewModel.isChecked ? Constants.selectedImageName : Constants.imageName)
-                .foregroundColor(.green)
-                .frame(width: 25, height: 25)
+                .foregroundColor(Constants.checkboxColor)
+                .frame(width: Constants.checkboxSize.width, height: Constants.checkboxSize.height)
             Text(viewModel.title)
                 .font(viewModel.isChecked ? Constants.selectedFont : Constants.font)
+                .foregroundColor(Constants.checkboxColor)
             Spacer()
         }
         .padding()

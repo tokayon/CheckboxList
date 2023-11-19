@@ -20,7 +20,7 @@ struct ContentView: View {
 
 extension ContentView {
     static func stub() -> ContentView {
-        ContentView(viewModel: .init(values: ["Orange", "Apple", "Cherry", "None of the above"], exclusiveValue: "None of the above"))
+        ContentView(viewModel: .init(values: ["First", "Second", "Third", "None of the above"], exclusiveValue: "None of the above"))
     }
 }
 
